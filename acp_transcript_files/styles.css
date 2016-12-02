@@ -1623,7 +1623,7 @@ header {
   height: 72px; 
 }
 header .container #logo {
-  float: left; 
+
 }
 header .container #logo a {
   background: url("https://www.acponline.org/inc/legacy-template/img/acp-logo-horizontal-4c.png");
@@ -1702,7 +1702,9 @@ footer {
     color: #B5B7B4;
     line-height: 2em;
     padding-left: 1em;
-    padding-right: 1em; }
+    padding-right: 1em; 
+    text-align: center;
+  }
 
 .page_content {
   padding-bottom: 130px; }
@@ -2050,7 +2052,7 @@ object {
   text-align: center; }
 
 .full-interior-padding {
-  padding: 1.5em 3em; }
+  padding: 1.5em 3em 0; }
 
 .grid:after, .split3:after, .split2:after, .page_content:after, .field-item:after {
   /* Or @extend clearfix */
@@ -2156,15 +2158,17 @@ object {
   
   text-align: right;
 }
-
+.personal_info {
+  padding-top: 15px;
+}
 .personal_info p {
   padding: 0;
   margin: 0;
 }
 
  .col-1-1 {
-  padding-top: 0;
-  margin-top: 0;
+  padding: 0;
+  margin: 0;
  }
 
 
