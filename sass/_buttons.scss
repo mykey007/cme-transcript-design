@@ -1,0 +1,167 @@
+// ------------------------------------
+// -------------- Buttons   -----------
+// ------------------------------------
+
+.button, button, .btn, .button_blue, .button_green {
+
+    // -------------- Default   -----------
+	background-color: $acp_blue_light;
+	color: #fff;
+	@include border-radius(50px);
+    padding: 0.5em 1.5em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    border: 0;
+    &:hover {
+    	background-color: lighten($acp_blue_light, 20%);
+    	color: #fff;
+    }
+
+    // -------------- Sizes   -----------
+    &.large {
+    	// font-size: 1.5em;
+        @extend .text--hecto;
+        font-weight: 300;
+    }
+
+    &.small {
+    	@extend small;
+    	@extend .extended_text;
+        // padding-right: 3em;
+        // padding-left: 3em;
+    }
+
+    // -------------- Width   -----------
+    &.button-full-width {
+        width: 100%;
+    }
+
+    // Split Icon Vertical Alignment
+    &.split-right, &.split-left, &.split-left.small {
+        @include display-flex(inline-flex);
+        @include align-items(center);
+    }
+    &.split-right.small, &.split-right {
+        @include display-flex(inline-flex);
+        @include justify-content(space-between);
+    }
+
+    // -------------- Colors   -----------
+
+    // -------------- Blue (default) split BKGD color (for use with icons)   -----------
+    &.split-right {
+        @include background-image(linear-gradient(to left, darken($acp_blue_light, 10%) 3em, $acp_blue_light 3em));
+        padding-right: 1em; // Reduce right side padding to allow for icon 
+        
+        i {
+            padding-left: 1.5em; // Add space between end of copy and icon
+            float: right;
+            line-height: 1.7em;
+        }
+        &:hover {
+            @include background-image(linear-gradient(to left, $acp_blue_light 3em, lighten($acp_blue_light, 20%) 3em));
+        }
+    }
+    &.split-left {
+        @include background-image(linear-gradient(to right, darken($acp_blue_light, 10%) 3em, $acp_blue_light 3em));
+        //padding-left: 4em; // Reduce left side padding to allow for icon
+
+        i {
+            padding-right: 1.5em; // Add space between icon and start of copy
+            left: -0.4em;
+            position: relative;
+            line-height: 1.6em;
+            float: left;
+        }
+        &:hover {
+            @include background-image(linear-gradient(to right, $acp_blue_light 3em, lighten($acp_blue_light, 20%) 3em));
+        }     
+    }
+
+    // Greens
+    &.faded-green { 
+        background-color:$faded-green ; 
+        &:hover {
+            background-color: lighten($faded-green, 20%);
+        }
+        // -------------- Green split BKGD color (for use with icons)   -----------
+        &.split-right {
+            @include background-image(linear-gradient(to left, darken($faded-green, 10%) 3em, $faded-green 3em));
+
+            &:hover {
+                @include background-image(linear-gradient(to left, $faded-green 3em, lighten($faded-green, 20%) 3em));
+            }
+        }
+        &.split-left {
+            @include background-image(linear-gradient(to right, darken($faded-green, 10%) 3em, $faded-green 3em));
+
+            &:hover {
+                @include background-image(linear-gradient(to right, $faded-green 3em, lighten($faded-green, 20%) 3em));
+            }     
+        }
+    }
+    &.acp-green-mid, &.green     { 
+        background-color:$acp_green_mid ; 
+        &:hover {
+            background-color: lighten($acp_green_mid, 20%);
+        }
+        // -------------- Green split BKGD color (for use with icons)   -----------
+        &.split-right {
+            @include background-image(linear-gradient(to left, darken($acp_green_mid, 10%) 3em, $acp_green_mid 3em));
+
+            &:hover {
+                @include background-image(linear-gradient(to left, $acp_green_mid 3em, lighten($acp_green_mid, 20%) 3em));
+            }
+        }
+        &.split-left {
+            @include background-image(linear-gradient(to right, darken($acp_green_mid, 10%) 3em, $acp_green_mid 3em));
+
+            &:hover {
+                @include background-image(linear-gradient(to right, $acp_green_mid 3em, lighten($acp_green_mid, 20%) 3em));
+            }     
+        }
+    }
+    
+    // Orange
+    &.acp-orange, &.orange        { 
+        background-color:$acp_orange ; 
+        &:hover {
+            background-color: lighten($acp_orange, 20%);
+        }
+        // -------------- Orange split BKGD color (for use with icons)   -----------
+        &.split-right {
+            @include background-image(linear-gradient(to left, darken($acp_orange, 10%) 3em, $acp_orange 3em));
+
+            &:hover {
+                @include background-image(linear-gradient(to left, $acp_orange 3em, lighten($acp_orange, 20%) 3em));
+            }
+        }
+        &.split-left {
+            @include background-image(linear-gradient(to right, darken($acp_orange, 10%) 3em, $acp_orange 3em));
+
+            &:hover {
+                @include background-image(linear-gradient(to right, $acp_orange 3em, lighten($acp_orange, 20%) 3em));
+            }     
+        }        
+    }
+}
+
+// ----------------------------------------------
+// -------------- UNDER Button LINK   -----------
+// ---------------- + all sm btns ---------------
+// ----------------------------------------------
+a.extended_text.small {
+    display: block;
+    text-align: center !important;
+    width: 100%;
+    margin-top: 1em;
+}
+
+
+
+
+
+
+
+

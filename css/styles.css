@@ -1927,7 +1927,7 @@ table {
   table tr th, table tr td {
     padding: 0.25rem;
     text-align: left;
-    border: 1px solid #ccc; }
+    /* border: 1px solid #ccc; */}
 
 ul {
   padding-left: 1em; }
@@ -2185,6 +2185,12 @@ object {
   margin: 0 auto;
 }
 
+.year.header, .year.header input {
+  font-size: 1rem;
+}
+table tr th, table tr td{
+  border: 0;
+}
 .shadow-z-1 {
   /*
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
@@ -2224,7 +2230,7 @@ object {
   font-weight: 400;
   color: #757575;
   vertical-align: bottom;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.12); */
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -2233,9 +2239,10 @@ object {
 .table > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > td {
   border-top: 0;
+  font-weight: bold;
 }
 .table > tbody + tbody {
-  /*border-top: 1px solid rgba(0, 0, 0, 0.12); */
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 .table .no-border {
   border: 0;
@@ -2316,9 +2323,6 @@ object {
   .table-responsive-vertical > .table-hover > tbody > tr:hover {
     background-color: #ffffff;
   }
-  .watermark {
-    height: 30%;
-  }
 }
 
 
@@ -2379,7 +2383,7 @@ object {
 }
 
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     .watermark {
       display: none;
     }

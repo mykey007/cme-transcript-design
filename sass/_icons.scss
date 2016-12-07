@@ -1,0 +1,71 @@
+// -------------------------------------------
+// -------------- Document Icons   -----------
+// -------------------------------------------
+
+a[target="_blank"]:after, 
+a[href$=".pdf"]:after, 
+a[href$=".ppt"]:after, 
+a[href$=".pptx"]:after, 
+a[href$=".pptm"]:after, 
+a[href$=".potx"]:after, 
+a[href$=".doc"]:after, 
+a[href$=".docx"]:after, 
+a[href$=".dotx"]:after, 
+a[href$=".dot"]:after, 
+a[href$=".xls"]:after, 
+a[href$=".xlsx"]:after { 
+  @extend .i;
+  padding-left: .5em;
+}
+
+
+// -------------- External Links     -----------
+a[target="_blank"]:after {
+  content: "\e00b";
+}
+
+// -------------- Word Docs     -----------
+a[href$=".doc"]:after, 
+a[href$=".docx"]:after, 
+a[href$=".dotx"]:after, 
+a[href$=".dot"]:after {
+  content: "\e600";
+}
+
+// -------------- PDFs     -----------
+a[href$=".pdf"]:after {
+  content: "\e601";
+  color: $acp_magenta;
+  &:hover {
+    color: lighten($acp_magenta, 20%);
+  }
+}
+
+// -------------- Powerpoints     -----------
+a[href$=".ppt"]:after, 
+a[href$=".pptx"]:after, 
+a[href$=".pptm"]:after, 
+a[href$=".potx"]:after {
+  content: "\e602";
+  color: $acp_orange;
+  &:hover {
+    color: lighten($acp_orange, 20%);
+  }
+}
+
+// -------------- Excel Sheets     -----------
+a[href$=".xls"]:after, 
+a[href$=".xlsx"]:after {
+  content: "\e603";
+  color: $acp_green_mid;
+  &:hover {
+    color: lighten($acp_green_mid, 20%);
+  }
+}
+
+
+// -------------- No Icon     -----------
+.no-icon:after {
+  display: none;
+}
+

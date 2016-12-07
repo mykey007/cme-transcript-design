@@ -1,0 +1,130 @@
+// Interactive Color Palette
+// https://dl.dropboxusercontent.com/u/42407174/inhouse/acp_palette/dist/index.html
+
+// ------------------------------------
+// -------------- Variables -----------
+// ------------------------------------
+$green-on-grey	  : #4AAE9C;
+$almost-white     : #B5B7B4;
+$nav_text		  : #F9F9F9;
+$faded-green	  : #4AAE9C;
+$text-color		  : #55616D;
+$super-light-grey : #f5f5f5;
+
+// -------------- ACP Colors ----------
+
+// ### GREENS
+$acp_green        : rgb(0,126,102);
+// #007E66
+// 100,25,71,10
+$acp_green_mid    : rgb(46,177,53);
+// #2EB135
+// 77,2,100,0
+$acp_green_bright : rgb(143,212,0);
+// #8FD400
+// 48,0,100,0
+$acp_green_light  : rgb(215,226,65);
+// #D7E241
+// 20,0,88,0
+ 
+// ### REDS
+$acp_magenta      : rgb(190,15,52);
+// #BE0F34
+// 18,100,83,8
+$acp_red          : rgb(220,41,30);
+// #DC291E
+// 8,97,100,1
+$acp_orange       : rgb(255,121,0);
+// #FF7900
+// 0,65,100,0
+$acp_gold         : rgb(255,200,46);
+// #FFC82E
+// 0,22,91,0
+$acp_yellow       : rgb(252,220,65);
+// #FCDC41
+// 3,10,85,0
+ 
+// ### BLUES
+$acp_blue_dark    : rgb(0,52,121);
+// #003497
+// 100,82,27,19
+$acp_blue_mid     : rgb(0,99,190);
+// #0063BE
+// 100,58,5,0
+$acp_blue_light   : rgb(0,160,223);
+// #00A0DF
+// 84,17,0,0
+ 
+// ### VIOLETS
+$acp_violet       : rgb(112,39,133);
+// #702785
+// 69,100,9,1
+$acp_violet_mid   : rgb(149,81,158);
+// #95519E
+// 46,81,1,0
+ 
+// ### BROWNS
+$acp_brown        : rgb(96,54,29);
+// #61361D
+// 40,73,89,49
+$acp_brown_mid    : rgb(191,101,15);
+// #BF650F
+// 20,67,100,7
+$acp_brown_light  : rgb(206,169,141);
+// #CEA98D
+// 19,33,45,0
+ 
+// ### GRAYS
+$acp_grey_dark    : rgb(87,90,93);
+// #575A5D
+// 65,55,52,27
+$acp_grey         : rgb(142,144,143);
+// #8E908F
+// 47,37,39,3
+$acp_grey_mid     : rgb(181,183,180);
+// #8E908F
+// 47,37,39,3
+$acp_grey_mid_light: rgb(209,212,211);
+// #D1D4D3
+// 17,11,13,0
+ 
+$acp_grey_light   : rgb(229,229,229);
+// #E5E5E5
+// 9,6,7,0
+ 
+.faded-green	   { background-color:$faded-green !important; }
+
+.acp-green         { background-color:$acp_green !important; }
+.acp-green-mid     { background-color:$acp_green_mid !important; }
+.acp-green-bright  { background-color:$acp_green_bright !important; }
+.acp-green-light   { background-color:$acp_green_light !important; }
+ 
+.acp-magenta       { background-color:$acp_magenta !important; }
+.acp-red           { background-color:$acp_red !important; }
+.acp-orange        { background-color:$acp_orange !important; }
+.acp-gold          { background-color:$acp_gold !important; }
+.acp-yellow        { background-color:$acp_yellow !important; }
+ 
+.acp-blue-dark     { background-color:$acp_blue_dark !important; }
+.acp-blue-mid      { background-color:$acp_blue_mid !important; }
+.acp-blue-light     { background-color:$acp_blue_light !important; }
+ 
+.acp-violet        { background-color:$acp_violet !important; }
+.acp-violet-mid    { background-color:$acp_violet_mid !important; }
+ 
+.acp-brown         { background-color:$acp_brown !important; }
+.acp-brown-mid     { background-color:$acp_brown_mid !important; }
+.acp-brown-light   { background-color:$acp_brown_light !important; }
+ 
+.acp-grey-dark     { background-color:$acp_grey_dark !important; }
+.acp-grey          { background-color:$acp-grey !important; }
+.acp-grey-mid      { background-color:$acp_grey_mid !important; }
+.acp-grey-mid-light{ background-color:$acp_grey_mid_light !important; }
+.acp-grey-light    { background-color:$acp_grey_light !important; }
+
+
+// -------------- Attributes ----------
+
+$border-white: 1px solid #ffffff;
+$text-shadow-white: 1px 1px 1px white;
+$text-shadow-black: 1px 1px 1px $acp_blue_dark;

@@ -1,0 +1,179 @@
+// ----
+// Original Source: http://maketea.co.uk/2014/11/05/managing-responsive-typography-with-sass.html
+// ----
+
+// config/_breakpoints.scss
+$breakpoints: (
+  small:    480px,
+  medium:   780px,
+  large:    960px,
+  x-large:  1280px
+);
+
+// config/_typography.scss
+$text-sizing: (
+  centi: (
+    small: (
+      font-size: 0.75rem,
+      line-height: 1.25
+    )
+  ),
+  deci: (
+    small: (
+      font-size: 0.875rem,
+      line-height: 1.25
+    )
+  ),
+  base: (
+    small: (
+      font-size: .9rem,
+      line-height: 1.6
+    ),
+    medium: (
+      font-size: 1rem,
+      line-height: 1.675
+    ),
+    x-large: (
+      font-size: 1.1rem,
+      line-height: 1.775
+    )
+  ),
+  deca: (
+    small: (
+      font-size: 1rem,
+      line-height: 1.5
+    ),
+    medium: (
+      font-size: 1.375rem,
+      line-height: 1.5
+    ),
+    x-large: (
+      font-size: 1.5rem,
+      line-height: 1.5
+    )
+  ),
+  hecto: (
+    small: (
+      font-size: 1.375rem,
+      line-height: 1.136
+    ),
+    medium: (
+      font-size: 1.5rem,
+      line-height: 1.25
+    ),
+    large: (
+      font-size: 1.75rem,
+      line-height: 1.25
+    )
+  ),
+  kilo: (
+    small: (
+      font-size: 1.625rem,
+      line-height: 1.154
+    ),
+    medium: (
+      font-size: 2rem,
+      line-height: 1.25
+    ),
+    large: (
+      font-size: 2.25rem,
+      line-height: 1.25
+    )
+  ),
+  mega: (
+    small: (
+      font-size: 2rem,
+      line-height: 1.25
+    ),
+    medium: (
+      font-size: 2.5rem,
+      line-height: 1.125
+    ),
+    large: (
+      font-size: 3rem,
+      line-height: 1.05
+    )
+  )
+);
+
+// lib/functions/_responsive.scss
+@function breakpoint($breakpoint-name) {
+  @return map-get($breakpoints, $breakpoint-name);
+}
+
+// lib/functions/_typography.scss
+@function text-breakpoints-for($text-size) {
+  @return map-get($text-sizing, $text-size);
+}
+
+@function text-properties-for($text-size, $breakpoint-name) {
+  $text-breakpoints-map: text-breakpoints-for($text-size);
+  @return map-get($text-breakpoints-map, $breakpoint-name);
+}
+
+// lib/mixins/_responsive.scss
+@mixin respond-above($breakpoint-name) {
+  @media screen and (min-width: breakpoint($breakpoint-name)) {
+    @content;
+  }
+}
+
+// lib/mixins/_typography.scss
+@mixin text-size($text-size, $breakpoint-name: "small") {
+  $text-size-properties: text-properties-for($text-size, $breakpoint-name);
+  font-size: map-get($text-size-properties, "font-size");
+  line-height: map-get($text-size-properties, "line-height");
+}
+
+@mixin responsive-text-size($text-size, $default-breakpoint: "small") {
+  @include text-size($text-size, $default-breakpoint);
+
+  $text-breakpoints-map: text-breakpoints-for($text-size);
+  $text-breakpoints-keys: map-keys($text-breakpoints-map);
+
+  @each $breakpoint-name in $text-breakpoints-keys {
+    @if $breakpoint-name != $default-breakpoint and breakpoint($breakpoint-name) != null {
+      @include respond-above($breakpoint-name) {
+        @include text-size($text-size, $breakpoint-name);
+      }
+    }
+  }
+}
+
+// _typography.scss
+h1,
+.text--mega {
+  @include responsive-text-size("mega");
+}
+
+h2,
+.text--kilo {
+  @include responsive-text-size("kilo");
+}
+
+h3, 
+.text--hecto {
+  @include responsive-text-size("hecto");
+}
+
+h4,
+.text--deca {
+  @include responsive-text-size("deca");
+}
+
+h5,
+h6,
+body,
+.text--base {
+  @include responsive-text-size("base");
+}
+
+.text--deci {
+  @include responsive-text-size("deci");
+}
+
+small,
+.text--centi,
+.small {
+  @include responsive-text-size("centi");
+}

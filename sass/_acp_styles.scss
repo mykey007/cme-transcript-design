@@ -1,0 +1,602 @@
+// ------------------------------------
+// -------------- ACP Styles ----------
+// ------------------------------------
+#overflow_hide {
+  overflow-x: hidden; // allows for faux absolute positioning for grey backgrounds
+}
+.container, .page_content {
+  max-width: 1500px;
+  padding: 0 1em;
+  margin: 0 auto;
+}
+
+
+
+// -------------------------- Simple Header Template - Custom (Non-Drupal Pages/Apps) -------------------------- 
+header {
+  border-bottom: 1px solid $acp_grey_light;
+  height: 72px;
+  .container {
+    #logo {
+      float: left;
+      a {
+        background: url("../img/acp-logo-horizontal-4c.png");
+        background-image: url("../img/acp-logo-horizontal-4c.svg"), none;
+        background-color: transparent;
+        background-position: left center;
+        background-size: 315px 36.867px;
+        background-repeat: no-repeat;
+        display: block;
+        height: 72px;
+        max-width: 100%;
+        width: 315px;
+        text-indent: -9999px;
+      }
+    }
+    .utility {
+      @extend .text--deci;
+      ul {
+        float: right;
+        padding-left: 0;
+        li {
+          list-style: none;
+          float: left;
+          display: inline;
+          padding-left: .5em;
+          margin-left: .5em;
+          border-left: 1px solid $acp_grey_light;
+          line-height: 3.1em;
+          &:first-of-type {
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+  // without login
+  &.without {
+    .container {
+      #logo {
+        width: 100%;
+        a {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 720px) { 
+  header {
+    height: 100px;
+    .container {
+      #logo {
+        width: 100%;
+        a {
+          width: 123px;
+          margin: 0 auto;
+        }
+      }
+      .utility {
+        text-align: center;
+        width: 100%;
+        ul {
+          float: none;
+          display: inline-block;
+          margin: 0 auto;
+          li {
+            line-height: 1.5em;
+          }
+        }
+      }
+    }
+    &.without {
+      height: 72px;
+    }
+  }
+}
+
+
+// -------------------------- Sticky Footer ----------------------------
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+footer {
+  bottom: 0;
+  height: 130px;
+  left: 0;
+  position: absolute;
+  width: 100%;  
+  background-color: $acp_grey_dark;
+  p {
+    @extend small;
+    color: $almost-white;
+    text-align: center;
+    line-height: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+.page_content {
+  padding-bottom: 130px;
+}
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+ 
+// -------------------------- BREAKPOINTS (orig. duplicated from typ_responsive) -------------------------- 
+$small:    480px;
+$medium:   780px;
+$large:    960px;
+$x-large:  1280px;
+
+// -------------------------- IMAGES (with captions) -------------------------- 
+figure {
+  display: table;
+  figcaption {
+    @extend small;
+    color: $acp_grey;
+    border-bottom: 3px solid $acp_grey_light;
+    padding: 0 0 0.5em 0;
+    display: table-caption; 
+    caption-side: bottom;
+  }
+  &.right {
+    float:right;
+    margin: 0 0 1.5em 1.5em;
+  }
+  &.left {
+    float:left;
+    margin: 0 1.5em 1.5em 0; 
+  }
+}
+
+// -------------------------- IMAGE ALIGNMENT -------------------------- 
+
+img[align=left], img.left {
+  margin: 0 1.5em 1.5em 0;
+}
+img[align=right], img.right {
+  margin: 0 0 1.5em 1.5em;
+}
+
+img.left {
+  float: left;
+}
+img.right {
+  float: right;
+}
+img.max, img.img-responsive {
+  max-width: 100%;
+}
+// Only use on SQUARE images
+img.round {
+  @include border-radius(999px);
+}
+
+
+// -------------------------- HORIZONTAL RULE --------------------------
+hr {
+  border-color: $acp_grey_light;
+  border-image: none;
+  border-style: solid none none;
+  border-width: 1px 0 0;
+  float: left;
+  clear: both;
+  width: 100%;
+  border-top: 1px solid $acp_grey_light;
+  margin: 2em 0;
+}
+
+
+// -------------------------- BREADCRUMB -------------------------- 
+.breadcrumb {
+  font-size: .7em;
+  text-transform: uppercase;
+  margin: 3em 0 0;
+  padding: 0;
+  & > a + a::before {
+    content: "\e615";
+    -moz-osx-font-smoothing: grayscale;
+      font-family: "KSAP-Core-Icons";
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-transform: none;
+      color: $text-color;
+      padding: 0 0.5em;
+  }
+}
+.node-type-top-level-page .breadcrumb {
+  display: none;
+}
+
+// --------------------------  Font Weighting & Family -------------------------- 
+h1, .thin {
+  font-weight: 300;
+}
+body {
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  color: $text-color;
+}
+
+h2, h3, h4, h5, strong, b {
+  font-weight: 600;
+}
+h5 {
+  color: $acp_grey;
+  text-transform: uppercase;
+}
+.bold {
+  font-weight: 700;
+}
+
+
+// --------------------------  Header Spacing/Margin -------------------------- 
+h2, h3, h4, h5 {
+  margin: 2em 0 1em 0;
+  &.no-top-margin {
+    margin-top: 1em;
+  }
+}
+
+
+
+// --------------------------  Full Width to Extend -------------------------- 
+.full-width {
+  background-color: $acp_grey_light;
+  padding-left: 10000px;
+  margin-left: -10000px;
+  padding-right: 10000px;
+  margin-right: -10000px;
+}
+.field-item {
+  .full-width {
+    // Extra Spacing
+    margin-bottom: 1em;
+    margin-top: 4em;
+    padding-bottom: 3em;
+    padding-top: 1em;
+  }
+}
+
+
+// -------------------------- BADGES --------------------------
+.badge {
+  @extend small;
+  @include border-radius(25px);
+  background-color: $acp_green_bright;
+  color: #ffffff;
+  font-weight: 400;
+  padding: 0.2em 0.7em;
+  text-transform: uppercase;
+  margin-right: .5em;
+  white-space: nowrap;
+  &.right {
+    float: right;
+    margin-left: .5em;
+  }
+  &.left {
+    float: left;
+  }
+}
+
+// -------------------------- UNAVAILABLE/FADED --------------------------
+.unavailable, .faded {
+  opacity: .25;
+}
+
+// -------------------------- HIGHLIGHT BOX --------------------------
+.acp-callouts-highlight,
+.highlight {
+  border: 1px solid $acp_yellow;
+  background-color: lighten($acp_yellow, 25%);
+  padding: 2em;
+  *:first-of-type {
+    margin-top: 0;
+  }
+  *:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// -------------------------- CLEAR --------------------------
+.clear {
+  float: left;
+  clear: both;
+  height: 1px;
+}
+
+
+// -------------------------- PARAGRAPHS ------------------------- 
+p {
+  // float: left;
+  // clear: both; causes wrapping issues with header tags
+  * {
+    max-width: 100%; // Keeps images and buttons from breaking out of content area
+  }
+}
+.intro {
+  @extend .text--deca;
+  font-weight: 300;
+  color: $acp_grey;
+}
+
+
+// -------------------------- LINKS ------------------------- 
+a {
+  text-decoration: none;
+  color: $acp_blue_light;
+  &:hover {
+    color: lighten($acp_blue_light, 20%);
+  }
+}
+
+
+a.anchor {
+  display: block; 
+  position: relative; 
+  top: -145px; 
+  visibility: hidden;
+}
+
+// Used on old ACPOL to define and hide anchored jump links
+.ia {
+  display: block;
+  text-indent: -999999px;
+  @extend .ia;
+}
+
+
+
+// -------------------------- BLOCKQUOTE ------------------------- 
+blockquote {  
+  border-top: 5px solid $acp_grey_light;
+  border-bottom: 1px solid $acp_grey_light;
+  margin: 1.5em 0;
+  padding: 1em 0;
+  quotes: "\201C""\201D""\2018""\2019";
+  @extend .intro;
+  &:before {
+    color: $acp_grey_light;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  &:after {
+    color: $acp_grey_light;
+    content: close-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-left: 0.25em;
+    vertical-align: -0.55em;
+  }
+  p {
+    display: inline;
+  }
+  &.right, &.left {
+    width: 40%;
+    margin-top: .5em;
+  }
+  &.right {
+    float: right;
+    margin-left: 1.5em;
+  }
+  &.left {
+    float: left;
+    margin-right: 1.5em;
+  }
+}
+
+// -------------------------- CSS3 COLUMNS (AUTO) ------------------------- 
+.auto-col-2, .auto-col-3, .auto-col-4 {
+  @include column-count(2);
+  // @include break-inside(avoid);
+  @include column-gap(3em);
+  @include column-rule(1px, solid, $acp_grey_light);
+
+  // Fixes top alignment
+  & > * {
+    display: inline-block;
+    width: 100%;
+  }
+  & > li:before {
+    @extend .i;
+    @extend .icon-bullet-med:before;
+    padding-right: .5em;
+  }
+}
+.auto-col-3 {
+  @include column-count(3);
+}
+ .auto-col-4 {
+  @include column-count(4);
+}
+// Mobile Collapses
+  @media (max-width: $medium) { 
+    .auto-col-4 {
+      @include column-count(2);
+    }
+  }
+
+  @media (max-width: $small) { 
+    .auto-col-2, .auto-col-3, .auto-col-4 {
+      @include column-count(1);
+    }
+  }
+
+// -------------------------- TABLES ------------------------- 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  tbody tr:nth-child(odd) {
+    background: #eee;
+  }
+  tr {
+    th, td {
+      padding: 0.25rem;
+      text-align: left;
+      border: 1px solid #ccc;
+    }
+    th {
+
+    }
+    td {
+
+    }
+  }
+}
+
+// -------------------------- Lists ------------------------- 
+ul {
+  // margin-top: 0;
+  padding-left: 1em;
+  li {
+    i {
+      padding-right: 1.5em;
+    }
+    a {
+      &.button {
+        width: 100%;
+        i {
+          padding-right: 0;
+        }
+      }
+    }
+    img {
+      vertical-align: middle;
+      padding-right: .5em;
+    }
+  }
+}
+ul.no-style {
+  padding: 0;
+  padding-bottom: .5em;
+  li {
+    list-style: none;
+    margin: 0;
+    padding: .25em 0;
+    i.icon-shape-circle {
+      color: $faded-green;
+    }
+  }
+}
+ul.extra-spacing {
+  li {
+    padding: .5em 0;
+  }
+}
+ul.small {
+  @extend .text--deci;
+}
+ul.inline {
+  li {
+    margin: 0 .5em 0 0;
+    padding: 0 .5em 0 0;
+    border-right: 1px solid $acp_grey_light;
+    &:last-of-type {
+      border: none;
+    }
+  }
+}
+
+
+// Arrow-Bulleted List (optional blue using .blue-arrow)
+.shift-arrow, .static-arrow {
+  list-style: none;
+  padding-left: 0;
+  position: relative;
+  & > li {
+    margin-left: 2em;
+    &:before {
+      content: '\e080';
+      @extend .i;
+      padding-right: 1em;
+      position: absolute;
+      left: 0.25em;
+    }
+  }
+  &.blue-arrow > li:before {
+    color: #46cbff;
+  }
+}
+.shift-arrow {
+  & > li {
+    &:before {
+      @include transition(all 0.2s ease);
+    }
+    &:hover {
+      padding: inherit;
+      &:before {
+        padding-right: 0.5em;
+        padding-left: 0.5em;
+      }
+    }
+  }
+}
+
+
+// .inline list within an accordion (meetings/chapters page)
+#accordion ul.inline {
+  margin-top: -1em;
+  margin-bottom: 2em;
+  display: block;
+}
+
+
+// -------------------------- Code ------------------------- 
+pre, code {
+  font-family: "Courier New" Courier monospace;
+  @extend .small;
+  color: $acp_brown_mid;
+  div.codeblock {
+    background-color: lighten($acp_brown_mid, 50%);
+    border: 1px dotted $acp_brown_mid;
+  }
+}
+
+// hide border in table
+table {
+  pre, code {
+    div.codeblock {
+      background-color: transparent;
+      border: 0;
+    }
+  }
+}
+
+
+
+// -------------------------- Videos ------------------------- 
+object {
+  max-width: 100%;
+  embed {
+    max-width: 100%;
+  }
+}
+
+
+
+
+// -------------------------- EXTENDS ------------------------- 
+.extended_text {
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.border-dotted {
+  &.right {
+    border-right: 2px dotted $acp_grey_mid_light;
+  }
+  &.left {
+    border-left: 2px dotted $acp_grey_mid_light;
+  }
+}
+
+
