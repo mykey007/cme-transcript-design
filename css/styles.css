@@ -2170,8 +2170,12 @@ object {
 }
 .total-credits {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 10px;
+}
+.total-credits span {
+  font-size: 22px;
+  font-weight: 300;
 }
 
 .col-1-1 {
