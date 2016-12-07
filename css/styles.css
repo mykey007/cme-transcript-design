@@ -2301,6 +2301,7 @@ table tr th, table tr td{
     font-size: inherit;
     font-weight: 400;
     color: #757575;
+    font-weight: 700;
   }
   .table-responsive-vertical.shadow-z-1 {
     -webkit-box-shadow: none;
@@ -2341,6 +2342,9 @@ table tr th, table tr td{
   .table > tbody > tr > td,
   .table > tfoot > tr > td {
     padding: 10px !important;
+  }
+  body .table > thead:first-child > tr:first-child > th {
+    font-size: 12px;
   }
   header {
     height: auto !important;
@@ -2383,6 +2387,9 @@ table tr th, table tr td{
   }
   .total-credits {
     font-size: 28px;
+  }
+  .watermark {
+    position: fixed;
   }
 }
 
