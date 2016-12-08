@@ -2337,7 +2337,7 @@ table tr th, table tr td{
 
 @media print {
   body, * {
-    color: #000;
+    color: #000 !important;
   }
   body {
     font-size: 14px !important;
@@ -2409,7 +2409,7 @@ table tr th, table tr td{
 }
 
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 550px) {
     body, * {
       text-align: center;
     }
@@ -2421,5 +2421,8 @@ table tr th, table tr td{
     }
     label {
       display: block;
+    }
+    .col-1-4 {
+      width: 100%;
     }
   }
