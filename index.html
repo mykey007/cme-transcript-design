@@ -48,7 +48,7 @@
             <!-- Page Content -->
             <div class="page_content">
 
-<div id="demo">
+            <div id="demo">
               <div class="grid full-interior-padding">
                 <h1 class="col-1-1">Continuing Medical Education (CME) <span>Transcript of Earned Credits</span></h1>
               </div>
@@ -63,21 +63,22 @@
                 <p class="email"><a href="mailto:InconsequentialBookmobile@maildrop.cc">InconsequentialBookmobile@maildrop.cc</a></p>
               </div>
 
-              <div class="col-1-4 print">
+              <div class="col-1-4">
                 <p  class="text-right"><img src="img/seal.png" width="152" /></p>
               </div>
             </div>
 
-            <div style=" border: 1px solid #eee;" class="full-interior-padding">
-              <div class="grid">
-                 <div class="col-1-2">
-                    <p class="total-credits"><span>Total Credits:</span> 888.88</p>
-                 </div>
-                 <div class="col-1-2 print">
-                  <p class="text-right"> <a class="button print" href="javascript:window.print();">Print this transcript</a></p>
-                </div>
+
+            <div class="grid print full-interior-padding">
+              <div class="col-1-1">
+                <p>Please select a date range...</p>
+                <label for="from">From:</label>
+                <input type="text" id="from" name="from">
+                <label for="to">To:</label>
+                <input type="text" id="to" name="to">
               </div>
-              <div class="grid print">
+
+              <!--
                 <div class="col-1-1">
                   <div class="year header clearfix">
                     <div class="left">
@@ -89,13 +90,25 @@
                     </div>
                   </div>
                   <div class="year body">
-                    <!-- Use a hidden field to pass the value so visible one can be set to disabled -->
                     <input id="date_range" name="date_range" type="hidden" value="2004 - 2006">
                     <div id="slider_range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 74.4681%; width: 4.25532%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 74.4681%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 78.7234%;"></a></div>
                   </div>
                 </div>
+                -->
               </div>
               
+
+
+            <div style=" border: 1px solid #eee;" class="full-interior-padding">
+              <div class="grid">
+                 <div class="col-1-2">
+                    <p class="total-credits"><span>Total Credits:</span> 888.88</p>
+                 </div>
+                 <div class="col-1-2 print">
+                  <p class="text-right"> <a class="button print" href="javascript:window.print();">Print this transcript</a></p>
+                </div>
+              </div>
+
                 
                   <img src="img/seal.png" class="watermark" />
                   <!-- Responsive table starts here -->
@@ -201,10 +214,37 @@
                           </td>
                           <td data-title="Category">CME</td>
                         </tr>
+                        <tr>
+                          <td data-title="Credits Issued" class="date-format">9/1/2015</td>
+                          <td data-title="Program Date" class="date-format">12/3/2015 - 12/30/2018</td>
+                          <td data-title="Title">Managing Conflict of Interests Evidence Case (COICMEEV)</td>
+                          <td data-title="Credits">1.00</td>
+                          <td data-title="Category">CE</td>
+                        </tr>
+                        <tr>
+                          <td data-title="Credits Issued" class="date-format">9/1/2015</td>
+                          <td data-title="Program Date" class="date-format">12/1/2015 - 12/3/2018</td>
+                          <td data-title="Title">Managing Conflict of Interests Drug Samples Case (COICMESA)</td>
+                          <td data-title="Credits">
+                            1.00
+                          </td>
+                          <td data-title="Category">CME</td>
+                        </tr>
+                        <tr>
+                          <td data-title="Credits Issued" class="date-format">9/1/2015</td>
+                          <td data-title="Program Date" class="date-format">12/3/2015 - 12/31/2018</td>
+                          <td data-title="Title">Managing Conflict of Interests Drug Advertisement Case (COICMEAD)</td>
+                          <td data-title="Credits">
+                            1.00
+                          </td>
+                          <td data-title="Category">CME</td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
-                 <div class="grid">
+                </div><!-- end #demo -->
+                <br>
+                <div class="grid">
                     <div class="col-1-2">
                       <p>The ACP certifies that the individual named has participated in the educational activities and was awarded <em>AMA PRA CME Credit(s)</em><sup>&trade;</sup>.</p>
                     </div>
@@ -212,11 +252,7 @@
                       <p>*The ACP is accredited by the Accreditation Council for Continuing Medical Education (ACCME) to provide continuing medical education for physicians.</p>
                     </div>
                   </div>
-                </div><!-- end #demo -->
               </div>
-
-
-
             </div>
 
             <!-- Footer-->
@@ -227,8 +263,9 @@
                 </p>       
             </footer>
         </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -241,7 +278,39 @@
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
         <script type="text/javascript">
+          // TODO: remove leading zeros if server can't
           //$(".date-format").replace(/\b0(?=\d)/g, '');
+            $( function() {
+              var dateFormat = "mm/dd/yy",
+                from = $( "#from" )
+                  .datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 3
+                  })
+                  .on( "change", function() {
+                    to.datepicker( "option", "minDate", getDate( this ) );
+                  }),
+                to = $( "#to" ).datepicker({
+                  defaultDate: "+1w",
+                  changeMonth: true,
+                  numberOfMonths: 3
+                })
+                .on( "change", function() {
+                  from.datepicker( "option", "maxDate", getDate( this ) );
+                });
+           
+              function getDate( element ) {
+                var date;
+                try {
+                  date = $.datepicker.parseDate( dateFormat, element.value );
+                } catch( error ) {
+                  date = null;
+                }
+           
+                return date;
+              }
+            });
         </script>
     </body>
 </html>
