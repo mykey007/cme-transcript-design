@@ -2135,7 +2135,9 @@ object {
 
 
 
-
+.print-invert {
+  display: none;
+}
 
 
 
@@ -2405,6 +2407,9 @@ table tr th, table tr td{
   }
   table tbody tr:nth-child(odd){
     background: transparent;
+  }
+  .print-invert {
+    display: block;
   }
 }
 
