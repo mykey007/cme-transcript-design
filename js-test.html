@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>ACP CME Transcript</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://www.acponline.org/inc/legacy-template/css/styles.css">
+<link rel="stylesheet" type="text/css" href="https://www.acponline.org/inc/legacy-template/policy-library/policy-library.css">
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/inc/legacy-template/cme-transcript/css/styles.css">
+<!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+</head>
+<body>
+<div id="wrapper"><!--[if lt IE 8]>
+                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+<!-- ACP Header (without Login)-->
+<header class="print">
+<div class="container">
+<div id="logo"><a href="https://www.acponline.org/">ACP - American College of Physicians</a></div>
+<div class="utility">
+<ul>
+<li>User name</li>
+<li>My ACP</li>
+<li>Sign Out</li>
+</ul>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="page_content">
+
+<div id="demo">
+<div class="grid full-interior-padding">
+  <h1 class="col-1-1">Continuing Medical Education (CME) <span>Transcript of Earned Credits</span></h1>
+</div>
+<hr>
+  <div class="grid full-interior-padding">
+<div class="col-3-4 personal_info">
+  <p class="name">LT Dan Hoffmanntestit Jr, MD</p>
+  <p class="badge">Physician</p>
+  <p class="acp_id">ACP #02227263</p>
+  <p class="address">123 Test Dr</p>
+  <p class="address">Apt B</p>
+  <p class="address">Philadelphia, PA 19106 UNITED STATES</p>
+  <p class="email"><a href="mailto:ddhoffmann@gmail.com">ddhoffmann@gmail.com</a></p>
+</div>              
+<div class="col-1-4">
+   <p  class="text-right"><img src="/inc/legacy-template/cme-transcript/img/seal.png" width="152" /></p>
+</div>
+</div>
+
+<form method="get" action="/auth-cgi/cmetranscript-test.pl" enctype="multipart/form-data" id="transcript-date-search-form">
+<div class="grid full-interior-padding">
+<div class="col-1-1">
+	<p class="print">Please select a date range...</p>
+	<p class="print-invert">Issued during selected date range</p>
+	<label for="from">From:</label>
+	<input type="text" name="from" id="from" />
+	<label for="to">To:</label>
+	<input type="text" name="to" id="to" />
+	<label for="type">Transcript type:</label>
+	<select name="type" >
+		<option value="total"> Full </option>
+		<option value="statereq"> State Specific </option>
+		<option value="leadreq"> Lead Program</option>
+	</select>
+	<input type="submit" name=".submit" value="Show Transcript" class="button green" />
+
+</div>
+</div>
+</form>	  
+<div class="full-interior-padding transcript-grid">
+       <div class="grid">
+           <div class="col-1-2">
+              <p class="total-credits"><span>Total Credits:</span> 24.25</p>
+           </div>
+           <div class="col-1-2 print">
+            <p class="text-right"> <a class="button print" href="javascript:window.print();">Print this transcript</a></p>
+          </div>
+        </div>
+
+          
+            <img src="/inc/legacy-template/cme-transcript/img/seal.png" class="watermark" />
+            <!-- Responsive table starts here -->
+            <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+            <div class="table-responsive-vertical shadow-z-1">
+            <!-- Table starts here -->
+            <table id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+              <tr>
+                <th>Credits Issued</th>
+                <th>Program Date</th>
+                <th>Program Title</th>
+                <th>Credits</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+			<tbody>
+<tr>
+		<td data-title="Credits Issued" class="date-format">10/01/2013</td> <!-- credits issued date -->
+	    <td data-title="Program Date" class="date-format">06/12/2013 - <br/>12/31/2015</td>		 <!-- program date --> 
+          <td data-title="Title">ACP Smart Medicine - Achalasia (D990) </td>  <!-- title -->
+	      <!-- <td width="15%" valign="top">Philadelphia PA</td> location -->
+	      <td data-title="Credits">0.50</td>  <!-- credits  -->
+	      <td data-title="Category">CME</td>  <!-- type -->
+	      </tr><tr>
+		<td data-title="Credits Issued" class="date-format">10/01/2013</td> <!-- credits issued date -->
+	    <td data-title="Program Date" class="date-format">06/12/2013 - <br/>12/31/2015</td>		 <!-- program date --> 
+          <td data-title="Title">ACP Smart Medicine - Bell's Palsy (D903) </td>  <!-- title -->
+	      <!-- <td width="15%" valign="top">Philadelphia PA</td> location -->
+	      <td data-title="Credits">0.50</td>  <!-- credits  -->
+	      <td data-title="Category">CME</td>  <!-- type -->
+	      </tr><tr>
+		<td data-title="Credits Issued" class="date-format">10/01/2013</td> <!-- credits issued date -->
+	    <td data-title="Program Date" class="date-format">06/12/2013 - <br/>12/31/2015</td>		 <!-- program date --> 
+          <td data-title="Title">ACP Smart Medicine - Hemolytic Anemia (D415) </td>  <!-- title -->
+	      <!-- <td width="15%" valign="top">Philadelphia PA</td> location -->
+	      <td data-title="Credits">0.50</td>  <!-- credits  -->
+	      <td data-title="Category">CME</td>  <!-- type -->
+	      </tr><tr>
+		<td data-title="Credits Issued" class="date-format">03/09/2016</td> <!-- credits issued date -->
+	    <td data-title="Program Date" class="date-format">01/06/2014 - <br/>12/31/2015</td>		 <!-- program date --> 
+          <td data-title="Title">Practice Assessment: Low Back Pain (PAQI01) </td>  <!-- title -->
+	      <!-- <td width="15%" valign="top"></td> location -->
+	      <td data-title="Credits">20.00</td>  <!-- credits  -->
+	      <td data-title="Category">CME</td>  <!-- type -->
+	      </tr><tr>
+		<td data-title="Credits Issued" class="date-format">11/19/2016</td> <!-- credits issued date -->
+	    <td data-title="Program Date" class="date-format">11/18/2016 - <br/>11/20/2016</td>		 <!-- program date --> 
+          <td data-title="Title">California Northern 2016 Chapter Meeting (RM1722) </td>  <!-- title -->
+	      <!-- <td width="15%" valign="top"></td> location -->
+	      <td data-title="Credits">0.75</td>  <!-- credits  -->
+	      <td data-title="Category">CME</td>  <!-- type -->
+	      </tr><tr>
+		<td data-title="Credits Issued" class="date-format">11/19/2016</td> <!-- credits issued date -->
+	    <td data-title="Program Date" class="date-format">11/18/2016 - <br/>11/18/2016</td>		 <!-- program date --> 
+          <td data-title="Title">Northern California: SEP Pre-Course - Update in Hospice Care (RM1722A) </td>  <!-- title -->
+	      <!-- <td width="15%" valign="top"></td> location -->
+	      <td data-title="Credits">0.75</td>  <!-- credits  -->
+	      <td data-title="Category">CME</td>  <!-- type -->
+	      </tr><tr>
+		<td data-title="Credits Issued" class="date-format">11/19/2016</td> <!-- credits issued date -->
+	    <td data-title="Program Date" class="date-format">11/18/2016 - <br/>11/18/2016</td>		 <!-- program date --> 
+          <td data-title="Title">Northern California: SEP Pre-Course - Update in Palliative Care (RM1722B) </td>  <!-- title -->
+	      <!-- <td width="15%" valign="top"></td> location -->
+	      <td data-title="Credits">1.25</td>  <!-- credits  -->
+	      <td data-title="Category">CME</td>  <!-- type -->
+	      </tr> </tbody>
+                    </table>
+                  </div></div><!-- end #demo -->
+<div class="grid">
+    <div class="col-1-2">
+      <p>The ACP certifies that the individual named has participated in the educational activities and was awarded <em>AMA PRA CME Credit(s)</em><sup>&trade;</sup>.</p>
+    </div>
+    <div class="col-1-2">
+      <p>*The ACP is accredited by the Accreditation Council for Continuing Medical Education (ACCME) to provide continuing medical education for physicians.</p>
+    </div>
+</div>
+
+</div>
+</div>
+<!-- end full-interior-padding transcript-grid -->
+<!-- Footer-->
+<footer>
+<p>Date: <input type="text" id="datepicker" /></p>
+<p>© Copyright 2014 American College of Physicians. All Rights
+Reserved. 190 North Independence Mall West, Philadelphia, PA
+19106-1572<br>
+Toll Free: (800) 523.1546 · Local: (215) 351.2400</p>
+</footer>
+</div>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script src="/inc/legacy-template/cme-transcript/js/main.js"></script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5664001-1', 'auto');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+ 
+<script>
+ $( function() {
+	$( "#datepicker" ).datepicker({ dateFormat: 'm/d/yy'});
+	//$( "#to" ).datepicker();
+} );
+</script>
+<script>
+          // TODO: remove leading zeros if server can't
+          //$(".date-format").replace(/\b0(?=\d)/g, '');
+            $( function() {
+              var dateFormat = "m/d/yy";
+              var from = $( "#from" )
+                  .datepicker({
+                    defaultDate: "+1w",
+		    dateFormat: dateFormat,
+                    changeMonth: true,
+                    numberOfMonths: 3
+                  })
+                  .on( "change", function() {
+                    to.datepicker( "option", "minDate", getDate( this ) );
+                  });
+              var to = $( "#to" ).datepicker({
+                  defaultDate: "+1w",
+		  dateFormat: dateFormat,
+                  changeMonth: true,
+                  numberOfMonths: 3
+                })
+                .on( "change", function() {
+                  from.datepicker( "option", "maxDate", getDate( this ) );
+                });
+           
+              function getDate( element ) {
+                var date;
+                try {
+                  date = $.datepicker.parseDate( dateFormat, element.value );
+                } catch( error ) {
+                  date = null;
+                }
+           
+                return date;
+              }
+            });
+</script>
+</body>
+</html>
